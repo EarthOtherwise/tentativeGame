@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cas6bkk6ly74j"]
+
+[ext_resource type="Script" uid="uid://0ccxx8kh6c3" path="res://botw_assets/scenes/entities/player/botw_player.gd" id="1_m61h2"]
+[ext_resource type="PackedScene" uid="uid://cavyv8n7dhp06" path="res://botw_assets/scenes/entities/player/botw_camera_controller.tscn" id="2_3ykwt"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_t1g3l"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m61h2"]
+
+[node name="player" type="CharacterBody3D" unique_id=1936607996]
+script = ExtResource("1_m61h2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=689544503]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_t1g3l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=286100869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_m61h2")
+
+[node name="cameraController" parent="." unique_id=313380331 instance=ExtResource("2_3ykwt")]
+transform = Transform3D(1, 0, 0, 0, 0.767993, 0.6404583, 0, -0.6404583, 0.767993, 0, 1.791378, 0)

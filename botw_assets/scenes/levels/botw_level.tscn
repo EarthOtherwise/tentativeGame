@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bcjromlfsnamf"]
+
+[ext_resource type="PackedScene" uid="uid://cas6bkk6ly74j" path="res://botw_assets/scenes/entities/player/botw_player.tscn" id="1_s881b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s881b"]
+size = Vector3(40, 0.5, 40)
+
+[node name="botw_level" type="Node3D" unique_id=1519344379]
+
+[node name="entities" type="Node3D" parent="." unique_id=91140787]
+
+[node name="player" parent="entities" unique_id=1936607996 instance=ExtResource("1_s881b")]
+
+[node name="enviroment" type="Node3D" parent="." unique_id=1450613164]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="enviroment" unique_id=731598284]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="enviroment/StaticBody3D" unique_id=57043232]
+size = Vector3(40, 0.5, 40)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="enviroment/StaticBody3D" unique_id=478919146]
+shape = SubResource("BoxShape3D_s881b")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1652866696]
+transform = Transform3D(0.63739705, 0.7705355, 0, -0.67253876, 0.5563328, 0.48804244, 0.37605405, -0.31107682, 0.8728199, 0, 10.401925, 0)

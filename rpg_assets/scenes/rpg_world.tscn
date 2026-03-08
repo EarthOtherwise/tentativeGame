@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bduf4y8acatgx"]
+
+[ext_resource type="PackedScene" uid="uid://cf8m3qjsn5bj6" path="res://rpg_assets/objects/rpg_player.tscn" id="1_2ljpq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e5uuo"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnsk1"]
+albedo_color = Color(0.47461075, 0.9595117, 0.53138685, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_rwgxs"]
+size = Vector2(50, 50)
+orientation = 1
+
+[node name="rpg_world" type="Node3D" unique_id=1811242036]
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=1291511401]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1345809832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_e5uuo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=1202881971]
+material_override = SubResource("StandardMaterial3D_nnsk1")
+mesh = SubResource("QuadMesh_rwgxs")
+
+[node name="player" parent="." unique_id=754640252 instance=ExtResource("1_2ljpq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35356045, 0.9, 0.3254814)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1061077418]
+transform = Transform3D(1, 0, 0, 0, 0.8006896, 0.5990795, 0, -0.5990795, 0.8006896, 0, 5.746374, 0)

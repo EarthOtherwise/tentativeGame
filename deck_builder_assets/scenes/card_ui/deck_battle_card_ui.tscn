@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://c0auy6q0ctukc"]
+
+[ext_resource type="Theme" uid="uid://d7qna5a40k3v" path="res://deck_builder_assets/main_theme.tres" id="1_ua0pu"]
+[ext_resource type="Script" uid="uid://bj06agxy5joop" path="res://deck_builder_assets/scenes/card_ui/deck_battle_card_ui.gd" id="2_7g68v"]
+[ext_resource type="Script" uid="uid://bfgwkpry2nnvo" path="res://deck_builder_assets/scenes/card_ui/deck_battle_card_state_machine.gd" id="3_nkapu"]
+[ext_resource type="Script" uid="uid://86m7fkkb0dyv" path="res://deck_builder_assets/scenes/card_ui/card_state/deck_battle_card_base_state.gd" id="4_7dibq"]
+[ext_resource type="Script" uid="uid://dfb6qy606cs16" path="res://deck_builder_assets/scenes/card_ui/card_state/deck_battle_card_clicked_state.gd" id="5_cbvet"]
+[ext_resource type="Script" uid="uid://d3valqbenwwhi" path="res://deck_builder_assets/scenes/card_ui/card_state/deck_battle_card_dragging_state.gd" id="6_wadg3"]
+[ext_resource type="Script" uid="uid://usqu5rbwtevv" path="res://deck_builder_assets/scenes/card_ui/card_state/deck_battle_card_released_state.gd" id="7_7yiir"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ua0pu"]
+size = Vector2(25, 30)
+
+[node name="cardUI" type="Control" unique_id=1760608042]
+custom_minimum_size = Vector2(25, 30)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 37.0
+offset_right = -885.0
+offset_bottom = -473.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ua0pu")
+script = ExtResource("2_7g68v")
+
+[node name="tempColour" type="ColorRect" parent="." unique_id=910338379]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1.540184e-06, 0.7327827, 0.5230947, 1)
+
+[node name="state" type="Label" parent="." unique_id=821024637]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "state"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="dropPointDetector" type="Area2D" parent="." unique_id=164014757]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dropPointDetector" unique_id=1231647546]
+position = Vector2(12.5, 15)
+shape = SubResource("RectangleShape2D_ua0pu")
+
+[node name="cardStateMachine" type="Node2D" parent="." unique_id=933890323 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_nkapu")
+initial_state = NodePath("cardBaseState")
+
+[node name="cardBaseState" type="Node" parent="cardStateMachine" unique_id=516373356]
+script = ExtResource("4_7dibq")
+
+[node name="cardClickedState" type="Node" parent="cardStateMachine" unique_id=1831674037]
+script = ExtResource("5_cbvet")
+state = 1
+
+[node name="cardDraggingState" type="Node" parent="cardStateMachine" unique_id=1300372052]
+script = ExtResource("6_wadg3")
+state = 2
+
+[node name="cardReleasedState" type="Node" parent="cardStateMachine" unique_id=1310372126]
+script = ExtResource("7_7yiir")
+state = 4
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="dropPointDetector" to="." method="_on_drop_point_detector_area_entered"]
+[connection signal="area_exited" from="dropPointDetector" to="." method="_on_drop_point_detector_area_exited"]

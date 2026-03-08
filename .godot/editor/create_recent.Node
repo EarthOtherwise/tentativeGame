@@ -1,0 +1,15 @@
+CollisionShape2D
+AnimatedSprite2D
+CharacterBody2D
+SpringArm3D
+Camera3D
+MeshInstance3D
+DirectionalLight3D
+CollisionShape3D
+CSGBox3D
+StaticBody3D
+Node3D
+Node
+Node2D
+HBoxContainer
+CanvasLayer

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cavyv8n7dhp06"]
+
+[ext_resource type="Script" uid="uid://c2r0qimss1j35" path="res://botw_assets/scenes/entities/player/botw_camera_controller.gd" id="1_567c5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_x6hgj"]
+
+[node name="cameraController" type="SpringArm3D" unique_id=467334545]
+shape = SubResource("SphereShape3D_x6hgj")
+spring_length = 6.0
+script = ExtResource("1_567c5")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=236009792]
+current = true
