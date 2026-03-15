@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://dwtklt2wqffao"]
 
+[ext_resource type="Script" uid="uid://tysictp0j7ct" path="res://crop_tales_assets/scenes/characters/player/player.gd" id="1_g44mc"]
 [ext_resource type="Texture2D" uid="uid://bji554l0frqgw" path="res://crop_tales_assets/Characters/Basic Charakter Spritesheet.png" id="1_hwu2q"]
 [ext_resource type="Texture2D" uid="uid://bilvpui20lcso" path="res://crop_tales_assets/Characters/Basic Charakter Actions.png" id="1_vi6u3"]
+[ext_resource type="Script" uid="uid://df48q1ovn5pq2" path="res://crop_tales_assets/Scripts/State Machine/node_state_machine.gd" id="3_03aft"]
+[ext_resource type="Script" uid="uid://dm2odt0qcai10" path="res://crop_tales_assets/scenes/characters/player/player_state_idle.gd" id="4_7dyc2"]
+[ext_resource type="Script" uid="uid://dapsi21wmgt7y" path="res://crop_tales_assets/scenes/characters/player/player_state_walk.gd" id="5_7dyc2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_03aft"]
 atlas = ExtResource("1_vi6u3")
@@ -390,6 +394,7 @@ animations = [{
 radius = 8.0
 
 [node name="player" type="CharacterBody2D" unique_id=527281401]
+script = ExtResource("1_g44mc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1919408464]
 position = Vector2(0, -9)
@@ -399,3 +404,17 @@ animation = &"chopping_back"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=249300689]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_xi2tt")
+
+[node name="playerStateMachine" type="Node" parent="." unique_id=963194340 node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("3_03aft")
+initial_node_state = NodePath("playerState_idle")
+
+[node name="playerState_idle" type="Node" parent="playerStateMachine" unique_id=1592183240 node_paths=PackedStringArray("player", "animated_sprite_2d")]
+script = ExtResource("4_7dyc2")
+player = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="playerState_walk" type="Node" parent="playerStateMachine" unique_id=219315436 node_paths=PackedStringArray("player", "animated_sprite_2d")]
+script = ExtResource("5_7dyc2")
+player = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")

@@ -1,0 +1,82 @@
+{
+	"categories": [
+		{
+			"uuid": "005142de-b125-4a7d-8a82-d4172eb72a59",
+			"title": "Task",
+			"color": "569eff"
+		},
+		{
+			"uuid": "b5eae446-7de5-4fb5-97ec-0d3ef131ca3a",
+			"title": "Tosk",
+			"color": "7716b3"
+		},
+		{
+			"uuid": "fad71509-ae1d-429a-8cd9-29edc87e3730",
+			"title": "Bisk",
+			"color": "14f931"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "e46679d9-edf5-478f-afc3-1db968c5a2cf",
+			"title": "Todo",
+			"tasks": [
+				"9bf1ef27-dce9-46f6-91ac-36ea1698e78b"
+			]
+		},
+		{
+			"uuid": "71fe7811-ed3b-4b5f-ab81-2d222c9dc79a",
+			"title": "Doing",
+			"tasks": [
+				"88e850dd-5c8a-442f-8451-e80e47957a3d"
+			]
+		},
+		{
+			"uuid": "41240aeb-1c67-4d31-93cd-9b8513b5dcdb",
+			"title": "Done",
+			"tasks": []
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "9bf1ef27-dce9-46f6-91ac-36ea1698e78b",
+			"title": "Prog1",
+			"description": "",
+			"category": "005142de-b125-4a7d-8a82-d4172eb72a59",
+			"steps": [
+				{
+					"details": "jojo",
+					"done": false
+				},
+				{
+					"details": "bogo",
+					"done": false
+				},
+				{
+					"details": "cheesey",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "88e850dd-5c8a-442f-8451-e80e47957a3d",
+			"title": "prog 2",
+			"description": "what's this?",
+			"category": "005142de-b125-4a7d-8a82-d4172eb72a59",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"e46679d9-edf5-478f-afc3-1db968c5a2cf"
+			],
+			[
+				"71fe7811-ed3b-4b5f-ab81-2d222c9dc79a"
+			],
+			[
+				"41240aeb-1c67-4d31-93cd-9b8513b5dcdb"
+			]
+		]
+	}
+}
