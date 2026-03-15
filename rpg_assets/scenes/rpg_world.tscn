@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bduf4y8acatgx"]
 
 [ext_resource type="PackedScene" uid="uid://cf8m3qjsn5bj6" path="res://rpg_assets/objects/rpg_player.tscn" id="1_2ljpq"]
-[ext_resource type="ArrayMesh" uid="uid://byg16yum40iiu" path="res://rpg_assets/models/grassMesh.res" id="1_b6335"]
+[ext_resource type="ArrayMesh" uid="uid://bckio0w8ahf0a" path="res://rpg_assets/models/grassMesh.res" id="1_b6335"]
 [ext_resource type="PackedScene" uid="uid://d05c2mqlmfskp" path="res://rpg_assets/models/tavern.glb" id="2_oh8ki"]
 [ext_resource type="PackedScene" uid="uid://bfghlqt1rubet" path="res://rpg_assets/models/CliffProps/cliffProps1.glb" id="3_3vfbm"]
 [ext_resource type="PackedScene" uid="uid://cmlaimkalbh8u" path="res://rpg_assets/models/CliffProps/cliffProps2.glb" id="4_s4r5f"]
@@ -32,6 +32,14 @@ buffer = PackedFloat32Array(-1.2962888, 0, 0.15422003, -3.8651772, 0, 1.3054304,
 [sub_resource type="BoxShape3D" id="BoxShape3D_3vfbm"]
 size = Vector3(1, 10, 50)
 
+[sub_resource type="Environment" id="Environment_b6335"]
+background_mode = 1
+background_color = Color(0.5628621, 0.64045113, 0.9094338, 1)
+ssao_enabled = true
+sdfgi_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+
 [node name="rpg_world" type="Node3D" unique_id=1811242036]
 
 [node name="floor" type="StaticBody3D" parent="." unique_id=1291511401]
@@ -54,6 +62,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35356045, 0.9, 0.3254814)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1061077418]
 transform = Transform3D(1, 0, 0, 0, 0.8006896, 0.5990795, 0, -0.5990795, 0.8006896, 0, 5.746374, 0)
+shadow_enabled = true
 
 [node name="tavern" parent="." unique_id=740795836 instance=ExtResource("2_oh8ki")]
 transform = Transform3D(0.26395717, 0, 0.9645344, 0, 1, 0, -0.9645344, 0, 0.26395717, -10.803785, 0.008584037, -11.330395)
@@ -107,3 +116,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.79286, -9.536743e-07, -3.1
 
 [node name="tree5" parent="treeManager" unique_id=1125790714 instance=ExtResource("8_s4r5f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.255541, 0, 7.3514376)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1846850434]
+environment = SubResource("Environment_b6335")
