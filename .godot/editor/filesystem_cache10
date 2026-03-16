@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1773592919
+::res://::1773594385
 icon.svg::CompressedTexture2D::8248433821724065335::1771468124::1771468131::1::::<><><>0<>0<>6ffcf90965598f24f4f600e63e6cddf7<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://addons/::1773509377
 ::res://addons/kanban_tasks/::1773509368
@@ -444,7 +444,7 @@ deck_battle_hand.gd::GDScript::3170480616062918958::1772477687::0::1::::hand<>HB
 ::res://rpg_assets/audio/::1773554184
 Ambiance.wav::AudioStreamWAV::6457682452100873593::1773554181::1773554184::1::::<><><>0<>0<>3a0550bfd8d8166a165a6b9f25086da4<>res://.godot/imported/Ambiance.wav-afb42f71bbb03c1d5fd1a378d14a4cc5.sample::
 Sword swing.wav::AudioStreamWAV::341274724083051913::1773554180::1773554182::1::::<><><>0<>0<>be4dcef065a24443b4081460144486c9<>res://.godot/imported/Sword swing.wav-734ae903017716bd95db8715b0caa697.sample::
-::res://rpg_assets/models/::1773556363
+::res://rpg_assets/models/::1773592923
 grass.glb::PackedScene::5519815227586472028::1773554238::1773592923::1::::<><><>0<>0<>739b53504603b644b85bdb5cdaccbcc9<>res://.godot/imported/grass.glb-04e7db538cb9278332f049ef32aa2483.scn::uid://bckio0w8ahf0a::::res://rpg_assets/models/grassMesh.res
 grassMesh.res::ArrayMesh::2547954234135665342::1773592923::0::1::::<><><>0<>0<><>::
 pinetree.glb::PackedScene::5226478239331831002::1773554238::1773554275::1::::<><><>0<>0<>a439e42f6eb5599e6ff2d529c772bf7b<>res://.godot/imported/pinetree.glb-cbd036111437bad68fb835e9e3310582.scn::uid://dows7t24fo4eh::::res://rpg_assets/models/pinetree_pine.png
@@ -474,8 +474,8 @@ storage.glb::PackedScene::5578187760429118565::1773554238::1773554241::1::::<><>
 torch.glb::PackedScene::3423104119027935514::1773554238::1773554240::1::::<><><>0<>0<>a08d8b0f082c082dbf5aaaca4515c81d<>res://.godot/imported/torch.glb-dc68927dabdc7edfa0346a452c251a3b.scn::
 ::res://rpg_assets/objects/::1772513575
 rpg_player.tscn::PackedScene::5192689512716103957::1772513567::0::1::::<><><>0<>0<><>::uid://clpfqu6jc4wqs::::res://rpg_assets/scripts/rpg_player.gd
-::res://rpg_assets/scenes/::1773557000
-rpg_world.tscn::PackedScene::2638631454217112079::1773557000::0::1::::<><><>0<>0<><>::uid://cf8m3qjsn5bj6::::res://rpg_assets/objects/rpg_player.tscn<>uid://byg16yum40iiu::::res://rpg_assets/models/grassMesh.res<>uid://d05c2mqlmfskp::::res://rpg_assets/models/tavern.glb<>uid://bfghlqt1rubet::::res://rpg_assets/models/CliffProps/cliffProps1.glb<>uid://cmlaimkalbh8u::::res://rpg_assets/models/CliffProps/cliffProps2.glb<>uid://ul7rome6xu1t::::res://rpg_assets/models/CliffProps/cliffProps3.glb<>uid://liyqy5s2s3h2::::res://rpg_assets/models/CliffProps/cliffProps4.glb<>uid://cerrq6jw15aeh::::res://rpg_assets/models/CliffProps/cliffProps5.glb<>uid://tx8thcmmx2yf::::res://rpg_assets/scenes/tree.tscn
+::res://rpg_assets/scenes/::1773593956
+rpg_world.tscn::PackedScene::2638631454217112079::1773593956::0::1::::<><><>0<>0<><>::uid://cf8m3qjsn5bj6::::res://rpg_assets/objects/rpg_player.tscn<>uid://bckio0w8ahf0a::::res://rpg_assets/models/grassMesh.res<>uid://d05c2mqlmfskp::::res://rpg_assets/models/tavern.glb<>uid://bfghlqt1rubet::::res://rpg_assets/models/CliffProps/cliffProps1.glb<>uid://cmlaimkalbh8u::::res://rpg_assets/models/CliffProps/cliffProps2.glb<>uid://ul7rome6xu1t::::res://rpg_assets/models/CliffProps/cliffProps3.glb<>uid://liyqy5s2s3h2::::res://rpg_assets/models/CliffProps/cliffProps4.glb<>uid://cerrq6jw15aeh::::res://rpg_assets/models/CliffProps/cliffProps5.glb<>uid://tx8thcmmx2yf::::res://rpg_assets/scenes/tree.tscn
 tree.tscn::PackedScene::1383106679626733465::1773556150::0::1::::<><><>0<>0<><>::uid://cgp0lk7m6no7k::::res://rpg_assets/models/pinetree.glb
 ::res://rpg_assets/scripts/::1772513567
 rpg_player.gd::GDScript::5576217570150462706::1772477704::0::1::::<>CharacterBody3D<><>0<>0<><>::

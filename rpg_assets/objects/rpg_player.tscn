@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cf8m3qjsn5bj6"]
 
 [ext_resource type="Script" uid="uid://clpfqu6jc4wqs" path="res://rpg_assets/scripts/rpg_player.gd" id="1_tmngj"]
+[ext_resource type="PackedScene" uid="uid://nf1f77aywl7p" path="res://rpg_assets/models/Sword.glb" id="2_u54tm"]
+[ext_resource type="Texture2D" uid="uid://dmmompm7d03tc" path="res://rpg_assets/sprites/healthbarbacunder.png" id="3_3esqs"]
+[ext_resource type="Texture2D" uid="uid://lp2aiepw7hon" path="res://rpg_assets/sprites/healthbarover.png" id="4_6xhlk"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_r11j7"]
 radius = 0.4
@@ -9,6 +12,67 @@ height = 1.8
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vbqhd"]
 radius = 0.4
 height = 1.8
+
+[sub_resource type="Animation" id="Animation_u54tm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/SwordPoint:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.82938087, -0.2879064, -0.81042814)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/SwordPoint:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.4566842, 2.0333905, 2.3989172)]
+}
+
+[sub_resource type="Animation" id="Animation_8lmf6"]
+resource_name = "swordSwing"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/SwordPoint:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.6333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.82938087, -0.2879064, -0.81042814), Vector3(0.82938087, -0.57923365, -1.131364), Vector3(0.82938087, -0.2879064, -0.81042814)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/SwordPoint:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.6333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.4566842, 2.0333905, 2.3989172), Vector3(0.63716114, 1.6094248, 1.617053), Vector3(0.4566842, 2.0333905, 2.3989172)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3esqs"]
+_data = {
+&"RESET": SubResource("Animation_u54tm"),
+&"swordSwing": SubResource("Animation_8lmf6")
+}
 
 [node name="player" type="CharacterBody3D" unique_id=754640252]
 script = ExtResource("1_tmngj")
@@ -19,6 +83,43 @@ mesh = SubResource("CapsuleMesh_r11j7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=201899112]
 shape = SubResource("CapsuleShape3D_vbqhd")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1467387812]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6037905, 0)
+[node name="Head" type="Node3D" parent="." unique_id=60040455]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6516018, 0)
+
+[node name="ThirdPersonCamera" type="Camera3D" parent="Head" unique_id=1068502129]
+transform = Transform3D(1, 0, 0, 0, 0.90553176, 0.42427847, 0, -0.42427847, 0.90553176, 0, 3.1734345, 3.7045496)
+
+[node name="FirstPersonCamera" type="Camera3D" parent="Head" unique_id=1467387812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04781127, 0)
 fov = 90.0
+
+[node name="SwordPoint" type="Node3D" parent="Head" unique_id=637377505]
+transform = Transform3D(0.5956222, 0.011089087, 0.80318844, 0.60695785, -0.6611686, -0.4409746, 0.52615297, 0.7501557, -0.40053716, 0.82938087, -0.2879064, -0.81042814)
+
+[node name="Sword" parent="Head/SwordPoint" unique_id=1449018693 instance=ExtResource("2_u54tm")]
+
+[node name="SwordSwing" type="AnimationPlayer" parent="." unique_id=583464741]
+libraries/ = SubResource("AnimationLibrary_3esqs")
+
+[node name="AttackCooldown" type="Timer" parent="." unique_id=2034472801]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=467131821]
+
+[node name="HealthBar" type="TextureProgressBar" parent="HUD" unique_id=725973263]
+offset_left = 16.0
+offset_top = 455.0
+offset_right = 255.0
+offset_bottom = 495.0
+value = 75.0
+texture_under = ExtResource("3_3esqs")
+texture_progress = ExtResource("4_6xhlk")
+
+[node name="Gold" type="Label" parent="HUD" unique_id=42235008]
+offset_left = 15.0
+offset_top = 477.0
+offset_right = 55.0
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 25
+text = "0"
+
+[connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]

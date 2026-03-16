@@ -5,12 +5,30 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 var sensitivity = 0.003
-@onready var camera = $Camera3D
+@onready var camera = $Head
+var isOnCooldown: bool = false
+@onready var animationPlayer = $SwordSwing
+@onready var cooldownTimer = $AttackCooldown
+@onready var hpBar = $HUD/HealthBar
+@onready var goldLabel = $HUD/Gold
+
+var currentGold: int = 0
+var hp: int = 50
+@export var maxHp: int = 50
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	$Head/FirstPersonCamera.current = true
+	hpBar.max_value = maxHp
+
+func update_hud():
+	hpBar.value = hp
+	goldLabel.text = str(currentGold)
 
 func _process(_delta: float) -> void:
+	update_hud()
+	attack()
+	_switch_view()
 	if Input.is_action_just_pressed("escape"):
 		get_tree().quit()
 
@@ -19,6 +37,19 @@ func _unhandled_input(event):
 		rotate_y(-event.relative.x * sensitivity)
 		camera.rotate_x(-event.relative.y * sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(70))
+
+func attack():
+	if Input.is_action_just_pressed("left_mouse") and !isOnCooldown:
+		animationPlayer.play("swordSwing")
+		isOnCooldown = true
+		cooldownTimer.start()
+
+func _switch_view():
+	if Input.is_action_just_pressed("switch"):
+		if $Head/FirstPersonCamera.current:
+			$Head/ThirdPersonCamera.current = true
+		else:
+			$Head/FirstPersonCamera.current = true
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -41,3 +72,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_attack_cooldown_timeout() -> void:
+	isOnCooldown = false
