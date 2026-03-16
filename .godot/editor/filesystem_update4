@@ -1,3 +1,3 @@
-res://rpg_assets/objects/rpg_player.tscn
-res://rpg_assets/scripts/rpg_player.gd
+res://rpg_assets/objects/rpg_enemy.tscn
+res://rpg_assets/scripts/rpg_enemy.gd
 res://rpg_assets/scenes/rpg_world.tscn

@@ -1,3 +1,8 @@
+NavigationAgent3D
+NavigationRegion3D
+CollisionShape3D
+Area3D
+CharacterBody3D
 Label
 TextureProgressBar
 ProgressBar
@@ -8,8 +13,3 @@ Node3D
 Camera3D
 WorldEnvironment
 MultiMeshInstance3D
-CollisionShape3D
-StaticBody3D
-Node
-Node2D
-CollisionShape2D

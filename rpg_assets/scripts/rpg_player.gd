@@ -76,3 +76,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_attack_cooldown_timeout() -> void:
 	isOnCooldown = false
+
+func player():
+	pass
