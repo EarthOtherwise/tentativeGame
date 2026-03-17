@@ -895,7 +895,6 @@ navAgent = NodePath("NavigationAgent3D")
 animationPlayer = NodePath("GobelinExport/AnimationPlayer")
 
 [node name="GobelinExport" type="Node3D" parent="." unique_id=1038887223]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15352008, 0)
 
 [node name="Armature_003" type="Node3D" parent="GobelinExport" unique_id=423532130]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
@@ -1129,7 +1128,12 @@ shape = SubResource("CylinderShape3D_qj0a5")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=42261742]
 
+[node name="DeathTimer" type="Timer" parent="." unique_id=817622670]
+wait_time = 2.44
+one_shot = true
+
 [connection signal="body_entered" from="ChaseArea" to="." method="_on_chase_area_body_entered"]
 [connection signal="body_exited" from="ChaseArea" to="." method="_on_chase_area_body_exited"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

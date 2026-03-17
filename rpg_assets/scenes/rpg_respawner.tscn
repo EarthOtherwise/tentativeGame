@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://devo1ibta84yl"]
+
+[ext_resource type="Script" uid="uid://dm0yhqnx4xbcu" path="res://rpg_assets/scenes/rpg_respawner.gd" id="1_dfrlc"]
+
+[node name="Respawner" type="Node3D" unique_id=516522262]
+script = ExtResource("1_dfrlc")
+
+[node name="Timer" type="Timer" parent="." unique_id=1247752948]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

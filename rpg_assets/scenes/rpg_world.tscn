@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cerrq6jw15aeh" path="res://rpg_assets/models/CliffProps/cliffProps5.glb" id="7_t4k48"]
 [ext_resource type="PackedScene" uid="uid://tx8thcmmx2yf" path="res://rpg_assets/scenes/tree.tscn" id="8_s4r5f"]
 [ext_resource type="PackedScene" uid="uid://dbiacnrgau6rc" path="res://rpg_assets/objects/rpg_enemy.tscn" id="10_aj2qq"]
+[ext_resource type="PackedScene" uid="uid://devo1ibta84yl" path="res://rpg_assets/scenes/rpg_respawner.tscn" id="11_t4k48"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e5uuo"]
 size = Vector3(50, 1, 50)
@@ -130,3 +131,7 @@ environment = SubResource("Environment_b6335")
 
 [node name="Enemy" parent="." unique_id=1563085508 instance=ExtResource("10_aj2qq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.867882, 0, 18.257158)
+
+[node name="Respawner" parent="." unique_id=516522262 instance=ExtResource("11_t4k48")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.937197, 1.0198851, 18.4469)
+theOneToRespawn = ExtResource("10_aj2qq")

@@ -1,3 +1,5 @@
+Timer
+Node3D
 CollisionShape3D
 Area3D
 NavigationAgent3D
@@ -7,8 +9,6 @@ Label
 TextureProgressBar
 ProgressBar
 CanvasLayer
-Timer
 AnimationPlayer
-Node3D
 Camera3D
 WorldEnvironment
