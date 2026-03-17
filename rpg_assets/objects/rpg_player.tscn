@@ -74,6 +74,9 @@ _data = {
 &"swordSwing": SubResource("Animation_8lmf6")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_3esqs"]
+size = Vector3(1.3525391, 1, 2.8240967)
+
 [node name="player" type="CharacterBody3D" unique_id=754640252]
 script = ExtResource("1_tmngj")
 
@@ -122,4 +125,12 @@ offset_bottom = 512.0
 theme_override_font_sizes/font_size = 25
 text = "0"
 
+[node name="AttackArea" type="Area3D" parent="." unique_id=730711329]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea" unique_id=1155757265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.048234284, 0, -1.8488059)
+shape = SubResource("BoxShape3D_3esqs")
+
 [connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]

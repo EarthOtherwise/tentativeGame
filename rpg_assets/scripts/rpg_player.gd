@@ -15,6 +15,9 @@ var isOnCooldown: bool = false
 var currentGold: int = 0
 var hp: int = 50
 @export var maxHp: int = 50
+var target = []
+var damage = 15
+
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -32,6 +35,8 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("escape"):
 		get_tree().quit()
 
+
+
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * sensitivity)
@@ -43,6 +48,8 @@ func attack():
 		animationPlayer.play("swordSwing")
 		isOnCooldown = true
 		cooldownTimer.start()
+		for enemies in target:
+			enemies.hp -= damage
 
 func _switch_view():
 	if Input.is_action_just_pressed("switch"):
@@ -79,3 +86,12 @@ func _on_attack_cooldown_timeout() -> void:
 
 func player():
 	pass
+
+func _on_attack_area_body_entered(body: Node3D) -> void:
+	if body.has_method("enemy"):
+		target .append(body)
+
+
+func _on_attack_area_body_exited(body: Node3D) -> void:
+	if body.has_method("enemy"):
+		target.erase(body)

@@ -8,12 +8,21 @@ var speed = 2
 var accel = 10
 var gravity = 9.8
 var target = null
+var damage = 5
+var lootToGive = 5
 
 @export var navAgent : NavigationAgent3D
 @export var animationPlayer : AnimationPlayer
 
 func _process(delta: float) -> void:
+	if hp <= 0:
+		state = States.die
+
+func enemy() -> void:
 	pass
+
+func giveLoot():
+	target.currentGold += lootToGive
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -42,6 +51,8 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
+func attack():
+	target.hp -= damage
 
 func _on_chase_area_body_entered(body: Node3D) -> void:
 	if body.has_method("player"):

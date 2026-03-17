@@ -1,7 +1,7 @@
-NavigationAgent3D
-NavigationRegion3D
 CollisionShape3D
 Area3D
+NavigationAgent3D
+NavigationRegion3D
 CharacterBody3D
 Label
 TextureProgressBar
@@ -12,4 +12,3 @@ AnimationPlayer
 Node3D
 Camera3D
 WorldEnvironment
-MultiMeshInstance3D
