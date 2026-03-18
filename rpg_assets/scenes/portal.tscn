@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dbcgiytq4k17d"]
+
+[ext_resource type="Script" uid="uid://cmvorp55v2xdx" path="res://rpg_assets/scenes/portal.gd" id="1_bpau1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v6pmd"]
+size = Vector3(1, 4.0336914, 6.491272)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bpau1"]
+albedo_color = Color(0.5938434, 0.28339982, 0.6871773, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v6pmd"]
+
+[node name="Portal" type="Node3D" unique_id=127179554]
+script = ExtResource("1_bpau1")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=753109909]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1314340944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2677681, 1.5168457, -0.013092041)
+shape = SubResource("BoxShape3D_v6pmd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=818619705]
+transform = Transform3D(1, 0, 0, 0, 3.8242347, 0, 0, 0, 6.657576, -2.3000298, 1.4521279, 0)
+material_override = SubResource("StandardMaterial3D_bpau1")
+mesh = SubResource("BoxMesh_v6pmd")
+
+[node name="SpawnPoint" type="Node3D" parent="." unique_id=41036814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43292797, 1.3877888, 0)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

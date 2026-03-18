@@ -19,49 +19,96 @@
 	"stages": [
 		{
 			"uuid": "e46679d9-edf5-478f-afc3-1db968c5a2cf",
-			"title": "Todo",
-			"tasks": [
-				"9bf1ef27-dce9-46f6-91ac-36ea1698e78b"
-			]
+			"title": "Botw todo",
+			"tasks": []
 		},
 		{
 			"uuid": "71fe7811-ed3b-4b5f-ab81-2d222c9dc79a",
-			"title": "Doing",
-			"tasks": [
-				"88e850dd-5c8a-442f-8451-e80e47957a3d"
-			]
+			"title": "botw doing",
+			"tasks": []
 		},
 		{
 			"uuid": "41240aeb-1c67-4d31-93cd-9b8513b5dcdb",
-			"title": "Done",
+			"title": "botw done",
+			"tasks": []
+		},
+		{
+			"uuid": "36d4bc4a-f295-4ebe-82ac-5c43f62c112f",
+			"title": "RPG Todo",
+			"tasks": [
+				"c0b6b9b7-b7b8-4d98-8ab2-43050dba7184",
+				"bd8131bd-f736-4ae3-97dc-66e3a79bfd97",
+				"267b5f2e-64f1-4154-b5f4-2dc37f1c171e",
+				"2696ac66-2ab3-4c60-8ed9-245467319599"
+			]
+		},
+		{
+			"uuid": "6cc4b04a-ec06-4abf-992d-e76e47009856",
+			"title": "Crop tales todo",
+			"tasks": []
+		},
+		{
+			"uuid": "3a42a143-e14f-45a3-9f2f-968f2e877466",
+			"title": "deck builder todo",
+			"tasks": []
+		},
+		{
+			"uuid": "f37e1abb-e497-4aa9-8a4b-b4a05c895e2b",
+			"title": "rpg doing",
+			"tasks": []
+		},
+		{
+			"uuid": "fa73cd4a-ec5c-4612-805f-cfba5d08e541",
+			"title": "crop tales doing",
+			"tasks": []
+		},
+		{
+			"uuid": "4a9d985f-16de-4e41-9f81-fb0f5bd81c27",
+			"title": "deck builder doing",
+			"tasks": []
+		},
+		{
+			"uuid": "2695bb25-5442-48f1-af27-9249fd4e77d1",
+			"title": "rpg done",
+			"tasks": []
+		},
+		{
+			"uuid": "8bdf5798-7728-48b4-bb8b-b579aca4e81b",
+			"title": "crop tales done",
+			"tasks": []
+		},
+		{
+			"uuid": "8bccf523-1ae3-40fd-8861-1e83f772f415",
+			"title": "deck builder done",
 			"tasks": []
 		}
 	],
 	"tasks": [
 		{
-			"uuid": "9bf1ef27-dce9-46f6-91ac-36ea1698e78b",
-			"title": "Prog1",
+			"uuid": "c0b6b9b7-b7b8-4d98-8ab2-43050dba7184",
+			"title": "create a constant scene directory for UIDs",
 			"description": "",
 			"category": "005142de-b125-4a7d-8a82-d4172eb72a59",
-			"steps": [
-				{
-					"details": "jojo",
-					"done": false
-				},
-				{
-					"details": "bogo",
-					"done": false
-				},
-				{
-					"details": "cheesey",
-					"done": false
-				}
-			]
+			"steps": []
 		},
 		{
-			"uuid": "88e850dd-5c8a-442f-8451-e80e47957a3d",
-			"title": "prog 2",
-			"description": "what's this?",
+			"uuid": "bd8131bd-f736-4ae3-97dc-66e3a79bfd97",
+			"title": "Create a proper state machine for the enemies",
+			"description": "",
+			"category": "005142de-b125-4a7d-8a82-d4172eb72a59",
+			"steps": []
+		},
+		{
+			"uuid": "267b5f2e-64f1-4154-b5f4-2dc37f1c171e",
+			"title": "Figure out how to do AABB for collision detection",
+			"description": "",
+			"category": "005142de-b125-4a7d-8a82-d4172eb72a59",
+			"steps": []
+		},
+		{
+			"uuid": "2696ac66-2ab3-4c60-8ed9-245467319599",
+			"title": "Figure out how to properly teleport between portals",
+			"description": "",
 			"category": "005142de-b125-4a7d-8a82-d4172eb72a59",
 			"steps": []
 		}
@@ -69,13 +116,22 @@
 	"layout": {
 		"columns": [
 			[
-				"e46679d9-edf5-478f-afc3-1db968c5a2cf"
+				"e46679d9-edf5-478f-afc3-1db968c5a2cf",
+				"36d4bc4a-f295-4ebe-82ac-5c43f62c112f",
+				"6cc4b04a-ec06-4abf-992d-e76e47009856",
+				"3a42a143-e14f-45a3-9f2f-968f2e877466"
 			],
 			[
-				"71fe7811-ed3b-4b5f-ab81-2d222c9dc79a"
+				"71fe7811-ed3b-4b5f-ab81-2d222c9dc79a",
+				"f37e1abb-e497-4aa9-8a4b-b4a05c895e2b",
+				"fa73cd4a-ec5c-4612-805f-cfba5d08e541",
+				"4a9d985f-16de-4e41-9f81-fb0f5bd81c27"
 			],
 			[
-				"41240aeb-1c67-4d31-93cd-9b8513b5dcdb"
+				"41240aeb-1c67-4d31-93cd-9b8513b5dcdb",
+				"2695bb25-5442-48f1-af27-9249fd4e77d1",
+				"8bdf5798-7728-48b4-bb8b-b579aca4e81b",
+				"8bccf523-1ae3-40fd-8861-1e83f772f415"
 			]
 		]
 	}

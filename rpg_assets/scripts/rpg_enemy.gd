@@ -15,7 +15,7 @@ var lootToGive = 5
 @export var animationPlayer : AnimationPlayer
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if hp <= 0:
 		state = States.die
 

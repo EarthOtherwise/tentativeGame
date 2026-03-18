@@ -1,7 +1,8 @@
-Timer
 Node3D
+MeshInstance3D
 CollisionShape3D
 Area3D
+Timer
 NavigationAgent3D
 NavigationRegion3D
 CharacterBody3D
@@ -11,4 +12,3 @@ ProgressBar
 CanvasLayer
 AnimationPlayer
 Camera3D
-WorldEnvironment
